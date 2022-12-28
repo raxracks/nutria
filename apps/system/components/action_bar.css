@@ -37,18 +37,34 @@ sl-icon {
   font-size: 1.5rem;
 }
 
-.container:not(.homescreen) .center {
+.container.homescreen sl-icon:not(.homescreen-icon) {
+  /* display: none; */
+}
+
+/* .container:not(.homescreen) .center {
+  display: none;
+} */
+
+.container.content sl-icon:not(.content-icon) {
+  /* display: none; */
+}
+
+.container.carousel sl-icon.carousel {
+  display: initial;
+}
+
+.container.carousel sl-icon.hidden {
   display: none;
 }
 
-sl-icon:not(.battery-icon) {
-  display: none;
+.container.carousel {
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 .center {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   grid-gap: 0.25em;
 }
 
@@ -145,7 +161,7 @@ sl-badge[variant="neutral"]::part(base) {
 }
 
 .frame-list {
-  display: flex;
+  display: none;
   align-items: center;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;

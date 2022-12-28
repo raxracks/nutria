@@ -18,7 +18,7 @@ body {
 
 #vkb {
   font-family: sans-serif;
-  background: rgb(233, 237, 244);
+  background: rgb(0, 0, 0);
   user-select: none;
   pointer-events: auto;
   height: 180px; /* Same as keyboard-height in shared/style/themes/default/theme.css */
@@ -51,23 +51,21 @@ body {
   align-items: center;
   justify-content: center;
 
-  color: rgba(0, 0, 0, 0.7);
-  background-color: white;
-  box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
+  color: white;
+  background-color: rgb(23, 23, 23);
   border-radius: 5px;
-  border-bottom: 1px solid #b5b5b5;
 }
 
 #vkb span.keycap:active {
-  background-color: rgb(230, 234, 241);
+  background-color: rgb(79, 79, 79);
 }
 
 #vkb span.keycap.style-secondary {
-  background-color: rgb(173, 181, 187);
+  background-color: rgb(54, 54, 54);
 }
 
 #vkb span.keycap.style-primary {
-  background-color: teal;
+  background-color: rgb(31, 151, 255);
 }
 
 #vkb span.size-large {

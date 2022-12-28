@@ -3,17 +3,15 @@
 :root {
   --logo-text-color: darkslategray;
   --logo-background-color: wheat;
-  --logo-grad-start: red;
-  --logo-grad-end: orange;
 }
-
+/* 
 @font-face {
   font-family: "Lobster";
   font-style: normal;
   font-weight: 400;
   src: local("sans-serif"), url("./Lobster-Regular.ttf") format("truetype");
   font-display: swap;
-}
+} */
 
 #logo {
   background: black;
@@ -24,14 +22,8 @@
 #logo div.title,
 #logo div.subtitle,
 #logo .action {
-  font-family: "Lobster", cursive;
-  background: linear-gradient(
-    to bottom right,
-    var(--logo-grad-start),
-    var(--logo-grad-end)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }
 
 #logo div.title {
@@ -64,24 +56,12 @@
 
 .ftu #logo div.title {
   font-size: 64px;
-  background: linear-gradient(
-    to bottom right,
-    var(--logo-grad-start),
-    var(--logo-grad-end)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
 }
 
 .ftu #logo div.subtitle {
   font-size: 22px;
-  background: linear-gradient(
-    to bottom right,
-    var(--logo-grad-start),
-    var(--logo-grad-end)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
 }
 
 body.ftu {
@@ -93,12 +73,6 @@ body.ftu {
 }
 
 .branded-text {
-  font-family: "Lobster", cursive;
-  background: linear-gradient(
-    to bottom right,
-    var(--logo-grad-start),
-    var(--logo-grad-end)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }

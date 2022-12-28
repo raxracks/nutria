@@ -388,10 +388,11 @@ document.addEventListener(
       `DOMContentLoaded, embedder is ${window.embedderSetupDone}`
     );
 
-    let enableTopStatus = Services.prefs.getBoolPref(
-      "ui.status-top.enabled",
-      false
-    );
+    // let enableTopStatus = Services.prefs.getBoolPref(
+    //   "ui.status-top.enabled",
+    //   false
+    // );
+    let enableTopStatus = true;
     window.config.topStatusBar = enableTopStatus;
     if (!enableTopStatus) {
       document.getElementById("screen").classList.add("no-top-status-bar");

@@ -81,7 +81,7 @@ const kDeps = [
   {
     name: "hide logo",
     kind: "virtual",
-    deps: ["homescreen ready", "status bar", "wallpaper ready"],
+    deps: ["homescreen ready", "status bar", "action bar", "wallpaper ready"],
   },
   {
     name: "wallpaper ready",
@@ -127,6 +127,12 @@ const kDeps = [
     name: "status bar",
     kind: "module",
     param: "./components/status_bar.js",
+    deps: ["battery helper", "shoelace-icon", "shoelace-badge"],
+  },
+  {
+    name: "action bar",
+    kind: "module",
+    param: "./components/action_bar.js",
     deps: ["battery helper", "shoelace-icon", "shoelace-badge"],
   },
   {

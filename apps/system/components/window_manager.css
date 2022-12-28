@@ -128,7 +128,7 @@ window-manager .carousel > div .head .close-icon {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 40%;
-  box-shadow: 2px 2px 3px black;
+  box-shadow: 1px black;
   transform: translateY(1em);
   font-size: 2rem;
   display: flex;
@@ -140,7 +140,7 @@ window-manager .carousel > div .head .favicon {
   width: 3rem;
   height: 3rem;
   border-radius: 40%;
-  box-shadow: 2px 2px 3px black;
+  box-shadow: 1px black;
   backdrop-filter: blur(10px);
   transform: translateY(-1em);
 }

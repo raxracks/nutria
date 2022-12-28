@@ -38,9 +38,13 @@
     </div>
 
     <div id="screen">
-      <div id="status-top"></div>
+      <!-- <action-bar id="actionbar"></action-bar> -->
+      <div id="status-top">
+        <status-bar id="statusbar"></status-bar>
+      </div>
       <window-manager id="wm"></window-manager>
-      <status-bar id="statusbar"></status-bar>
+
+      <action-bar id="actionbar"></action-bar>
     </div>
 
     <sl-drawer no-header placement="bottom" id="quick-settings">
@@ -51,7 +55,7 @@
       <reboot-menu></reboot-menu>
     </sl-drawer>
 
-    <sl-drawer no-header placement="bottom" id="site-info">
+    <sl-drawer no-header placement="top" id="site-info">
       <site-info></site-info>
     </sl-drawer>
 

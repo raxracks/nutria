@@ -16,7 +16,7 @@ webext-browser-action.keyboard-open {
   /* 100% - height(keyboard) - height(status bar) + margin
        We add the margin to visually remove the bottom margin and keep a bit more height.
     */
-  height: calc(100% - var(--keyboard-height) - var(--statusbar-height) + var(--margin));
+  height: calc(100% - var(--keyboard-height) - var(--statusbar-height) - var(--statusbar-height) + var(--margin));
 }
 
 webext-browser-action.offscreen {

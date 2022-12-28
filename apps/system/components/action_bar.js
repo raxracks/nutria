@@ -55,28 +55,31 @@ class SwipeDetector extends EventTarget {
   }
 }
 
-class StatusBar extends HTMLElement {
+class ActionBar extends HTMLElement {
   constructor() {
     super();
 
     this.shadow = this.attachShadow({ mode: "open" });
 
     this.shadow.innerHTML = `
-    <link rel="stylesheet" href="components/status_bar.css">
+    <link rel="stylesheet" href="components/action_bar.css">
       <div class="container homescreen">
         <div class="left">
-          <sl-icon class="static battery-icon homescreen-icon" name="battery-charging"></sl-icon>
-          <img class="favicon" />
-          <span class="left-text">Current page title that could be way too long to fit so we need to clip it some way.</span>
+          <sl-icon class="static battery-icon homescreen-icon hidden" name="battery-charging"></sl-icon>
+          <img class="favicon hidden" />
+          <span class="left-text hidden">Current page title that could be way too long to fit so we need to clip it some way.</span>
         </div>
         <div class="center">
-          <sl-icon name="layout-grid" class="quicklaunch homescreen-icon"></sl-icon>
-        </div>
-        <div class="right">
-          <div class="frame-list homescreen-icon content-icon"></div>
+          <sl-icon name="layout-grid" class="quicklaunch homescreen-icon hidden"></sl-icon>
           <sl-icon name="chevron-left" class="go-back content-icon"></sl-icon>
           <sl-icon name="home" class="content-icon"></sl-icon>
           <sl-icon name="columns" class="homescreen-icon"></sl-icon>
+        </div>
+        <div class="right">
+          <div class="frame-list homescreen-icon content-icon"></div>
+          <sl-icon name="chevron-left" class="go-back content-icon hidden"></sl-icon>
+          <sl-icon name="home" class="content-icon hidden"></sl-icon>
+          <sl-icon name="columns" class="homescreen-icon hidden"></sl-icon>
           <sl-badge pill variant="neutral"><sl-icon name="more-vertical" class="homescreen-icon content-icon"></sl-icon></sl-badge>
         </div>
       </div>
@@ -90,22 +93,22 @@ class StatusBar extends HTMLElement {
 
     this.isCarouselOpen = false;
 
-    // Initialize the clock and update it when needed.
-    this.updateClock();
-    this.clockTimer = new MinuteTimer();
-    this.clockTimer.addEventListener("tick", () => {
-      this.updateClock();
-    });
+    // // Initialize the clock and update it when needed.
+    // this.updateClock();
+    // this.clockTimer = new MinuteTimer();
+    // this.clockTimer.addEventListener("tick", () => {
+    //   this.updateClock();
+    // });
 
-    if (!navigator.getBattery) {
-      console.error("navigator.getBattery is not implemented!");
-      return;
-    }
+    // if (!navigator.getBattery) {
+    //   console.error("navigator.getBattery is not implemented!");
+    //   return;
+    // }
 
-    window.batteryHelper.addListener(
-      "statusbar",
-      this.getElem(".battery-icon")
-    );
+    // window.batteryHelper.addListener(
+    //   "statusbar",
+    //   this.getElem(".battery-icon")
+    // );
 
     // Attach event listeners to icons.
     let homeElem = this.getElem(`sl-icon[name="home"]`);
@@ -353,12 +356,12 @@ class StatusBar extends HTMLElement {
       left.classList.add("insecure");
     }
 
-    let goBack = this.getElem(".go-back");
-    if (state.canGoBack) {
-      goBack.classList.remove("disabled");
-    } else {
-      goBack.classList.add("disabled");
-    }
+    // let goBack = this.getElem(".go-back");
+    // if (state.canGoBack) {
+    //   goBack.classList.remove("disabled");
+    // } else {
+    //   goBack.classList.add("disabled");
+    // }
 
     // If the app was opened from the lock screen, prevent access
     // to the quick settings.
@@ -515,4 +518,4 @@ class StatusBar extends HTMLElement {
   }
 }
 
-customElements.define("status-bar", StatusBar);
+customElements.define("action-bar", ActionBar);
